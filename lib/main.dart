@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'screens/splash/splash_screen.dart';
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const InstaAIApp());
 }
 
@@ -11,18 +15,12 @@ class InstaAIApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'InstaAI',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('InstaAI'),
-        ),
-        body: const Center(
-          child: Text(
-            'Instagram AI Assistant',
-            style: TextStyle(fontSize: 24),
-          ),
-        ),
+      title: "InstaAI",
+      theme: ThemeData(
+        colorSchemeSeed: Colors.blue,
+        useMaterial3: true,
       ),
+      home: const SplashScreen(),
     );
   }
 }
